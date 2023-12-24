@@ -38,7 +38,6 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     print("** no instance found **")
 
-
     def do_create(self, arg):
         """
         Creates a new instance of BaseModel, saves it, and prints the id.
@@ -58,8 +57,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
         """
-        Deletes an instance based on the class name and id (save the change into
-        the JSON file).
+        Deletes an instance based on the class name and id (save the
+        change into the JSON file).
         Usage: destroy <class name> <id>
         """
         args = arg.split()
@@ -105,7 +104,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """
-        Updates an instance based on the class name and id by adding or updating attribute.
+        Updates an instance based on the class name and id by adding
+        or updating attribute.
         Usage: update <class name> <id> <attribute name> "<attribute value>"
         """
         args = arg.split()
@@ -113,7 +113,8 @@ class HBNBCommand(cmd.Cmd):
 
         if not args:
             print("** class name missing **")
-        elif args[0] not in globals() or not issubclass(globals()[args[0]], BaseModel):
+        elif args[0] not in globals() or not issubclass(globals()[args[0]],
+                                                        BaseModel):
             print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
@@ -137,7 +138,6 @@ class HBNBCommand(cmd.Cmd):
             setattr(obj_instance, attribute_name, attribute_value)
             obj_instance.save()
 
-
     def do_quit(self, arg):
         """
         exits the cmd for 'quit' as an arg to cmd
@@ -149,7 +149,6 @@ class HBNBCommand(cmd.Cmd):
         Exits the program cleanly
         """
         return True
-
 
 
 if __name__ == '__main__':

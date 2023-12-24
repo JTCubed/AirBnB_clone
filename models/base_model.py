@@ -3,7 +3,8 @@
 
 from datetime import datetime
 import uuid
-#from models import storage
+# from models import storage
+
 
 class BaseModel:
     """
@@ -33,9 +34,9 @@ class BaseModel:
             self.updated_at = now
             storage.new(self)
 
-
     def save(self):
         """Updates updated_at attribute"""
+        from models import storage
         now = datetime.now()
         self.updated_at = now
         storage.save()
@@ -59,7 +60,7 @@ class BaseModel:
         return inst_dict
 
 
-#if __name__ == "__main__":
+# if __name__ == "__main__":
 #    p = BaseModel()
 #    a = p.to_dict()
 #    o = BaseModel(**a)

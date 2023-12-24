@@ -11,7 +11,8 @@ from models.user import User
 
 class FileStorage:
     """
-    serializes instances to a JSON file and deserializes JSON file to instances:
+    serializes instances to a JSON file and deserializes JSON file
+    to instances:
     """
 
     __file_path = 'file.json'
@@ -40,7 +41,6 @@ class FileStorage:
         with open(self.__file_path, mode='w', encoding='utf-8') as f:
             json.dump(serialized, f)
 
-
     def reload(self):
         """
         deserializes the JSON file to __objects (only if the JSON
@@ -68,7 +68,7 @@ class FileStorage:
 #            pass
 
 
-#if __name__ == '__main__':
+# if __name__ == '__main__':
 #    o = FileStorage()
 #    j = {}
 #    o.reload()
