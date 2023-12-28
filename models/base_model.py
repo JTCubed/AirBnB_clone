@@ -60,7 +60,7 @@ class BaseModel:
         return inst_dict
 
 
-# if __name__ == "__main__":
-#    p = BaseModel()
-#    a = p.to_dict()
-#    o = BaseModel(**a)
+if __name__ == "__main__":
+    from __init__ import storage
+    p = BaseModel()
+    storage.new(p)

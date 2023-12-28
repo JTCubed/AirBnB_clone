@@ -26,7 +26,7 @@ class FileStorage:
 
     def new(self, obj):
         """
-        ets in __objects the obj with key <obj class name>.id
+        sets in __objects the obj with key <obj class name>.id
         """
         key = f"{obj.__class__.__name__}.{obj.id}"
         FileStorage.__objects[key] = obj
